@@ -20,26 +20,23 @@ Think about which debugging methods you found most useful and how you might appl
 
 // Programs and Solutions
 
-// Program A
+// Program A (Syntax Error)
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
-
-console.log("Welcome to the bootcamp
-
-// What’s Wrong?
+//It has Syntax Error missing quotes, paranthesis and semicolon 
+console.log("Welcome to the bootcamp");
 
 
 // Program B
-// Description:
+// Description: (Runtime Error)
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
-
-let numbers = [2, 4, "eight"];
+// Runtime Error because one of the array element is string and it cannot multiply a non numeric value
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
-// What’s Wrong?
 
 
 
@@ -47,7 +44,7 @@ for (let i = 0; i < numbers.length; i++) {
 // Description:
 // This snippet of code is supposed to check if a given number is prime (i.e., divisible only by 1 and itself). However, it incorrectly marks some numbers as prime or not prime.
 
-function isPrime(num) {
+/*function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
@@ -57,6 +54,20 @@ function isPrime(num) {
   return false; // Supposed to indicate num IS prime
 }
 
-console.log(isPrime(7)); // Expected true but gets false
+console.log(isPrime(7)); // Expected true but gets false */
 
 // What’s Wrong?
+// Logical error at the line return true when the divisor is found and return false at the has to be changed.
+function isPrime(num) {
+  if (num < 2) return false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // NOT prime
+    }
+  }
+
+  return true; // prime
+}
+
+console.log(isPrime(7)); // true
